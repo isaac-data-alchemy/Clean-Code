@@ -8,3 +8,4 @@ def get_input(text: str) -> str:
         Returns: user input as a str"""
     word = input(text)
     return word
+    

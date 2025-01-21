@@ -1,6 +1,9 @@
 from time import time
+from get_input import get_input
+from get_item import get_item
+from get_item import get_itemv2
 
-def search_v1(stack: list) -> str:
+def search_v1(stack: list, text: str) -> str:
     """
     Method: 'search_v1()' searches a list and returns a string 
     Arguments: requires one positional argument 'stack' 
@@ -8,7 +11,6 @@ def search_v1(stack: list) -> str:
     Parameters:
     Stack: a list object to be searched
     """
-    global text
     count = 0
     found = False
     while not found:
@@ -21,7 +23,7 @@ def search_v1(stack: list) -> str:
             print(f"{missing} not in stack. please try again")
             count +=1
 
-def search_v2(stack: list) -> str:
+def search_v2(stack: list, text: str) -> str:
     """
     Method: 'search_v2()'searches a list and returns a string \
     Dependencies: 'get_input()', 'get_itemv2()'
@@ -30,7 +32,6 @@ def search_v2(stack: list) -> str:
     Stack: a list object to be searched
     """
     start = time()
-    global text
     count = 0
     found = False
     while not found:
