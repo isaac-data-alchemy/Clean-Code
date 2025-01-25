@@ -4,10 +4,12 @@ def data_from_response(response: dict)-> dict:
     {
     "status": 200, # <int>
     "timestamp":"...", # ISO format string of the current dateime
-    "payload": {...} #dict with returned data}
+    "payload": {...} #dict with returned data
+    }
     
     - Returns a dictionary like::
-    {"data": {...}
+    {
+    "data": {...}
     
     - Raises: 
     - ValueError if the HTTP status is !=200}"""

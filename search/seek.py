@@ -40,7 +40,7 @@ def search_v2(stack: list, text: str) -> str:
         if obj:
             end = time()
             total_time = end-start
-            print(f"{obj} found, took {count+1} tries and {round(total_time, 3)}mls")
+            print(f"{obj} found, took {count+1} retries and {round(total_time, 3)}mls")
             found = True
         else:
             print(f"{missing} not in stack. please try again")
