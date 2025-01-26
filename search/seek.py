@@ -2,6 +2,7 @@ from time import time
 from get_input import get_input
 from get_item import get_item
 from get_item import get_itemv2
+from store import store_item
 
 def search_v1(stack: list, text: str) -> str:
     """
@@ -21,7 +22,29 @@ def search_v1(stack: list, text: str) -> str:
             found = True
         else:
             print(f"{missing} not in stack. please try again")
+            store_item(stack, missing)
             count +=1
+
+def search_v4(stack: list, text: str) -> str:
+    """
+    Method: 'search_v1()' searches a list and returns a string 
+    Arguments: requires one positional argument 'stack' 
+    Dependencies: 'get_input()', 'get_item()'
+    Parameters:
+    Stack: a list object to be searched
+    """
+    count = 0
+    found = False
+    while not found:
+        missing = get_input(text)
+        obj = get_item(stack, missing)
+        if not obj:
+            store_item(stack, missing)
+            print(f"{missing} not in stack. please try again")
+        else:
+            print(f"{obj} found, took {count+1} tries")
+            count +=1
+            found = True
 
 def search_v2(stack: list, text: str) -> str:
     """
@@ -43,6 +66,8 @@ def search_v2(stack: list, text: str) -> str:
             print(f"{obj} found, took {count+1} retries and {round(total_time, 3)}mls")
             found = True
         else:
+            store_item(stack, missing)
             print(f"{missing} not in stack. please try again")
-            count +=1            
-    
+            count +=1
+
+
