@@ -1,4 +1,5 @@
 from time import time
+from urllib import request
 from get_input import get_input
 from get_item import get_item
 from get_item import get_itemv2
@@ -36,15 +37,16 @@ def search_v4(stack: list, text: str) -> str:
     count = 0
     found = False
     while not found:
-        missing = get_input(text)
-        obj = get_item(stack, missing)
-        if not obj:
-            store_item(stack, missing)
-            print(f"{missing} not in stack. please try again")
+        query = get_input(text)
+        request_obj = get_item(stack, query)
+        if not request_obj:
+            store_item(stack, query)
+            print(f"{query} not in stack. please try again")
             count +=1
         else:
-            print(f"{obj} found, took {count+1} tries")
+            print(f"{request_obj} found, took {count+1} tries")
             found = True
+
 
 def search_v2(stack: list, text: str) -> str:
     """
@@ -58,17 +60,18 @@ def search_v2(stack: list, text: str) -> str:
     count = 0
     found = False
     while not found:
-        missing = get_input(text)
-        obj = get_itemv2(stack, missing)
-        if obj:
+        query = get_input(text)
+        request = get_itemv2(stack, query)
+        if request:
             end = time()
             total_time = end-start
-            print(f"{obj} found, took {count+1} retries and {round(total_time, 3)}mls")
+            print(f"{query} found, took {count+1} retries and {round(total_time, 3)}mls")
             found = True
         else:
-            store_item(stack, missing)
-            print(f"{missing} not in stack. please try again")
+            store_item(stack, query)
+            print(f"{query} not in stack. please try again")
             count +=1
+
 
 def search_v3(stack: list, text: str) -> str:
     """
@@ -82,16 +85,17 @@ def search_v3(stack: list, text: str) -> str:
     count = 0
     found = False
     while not found:
-        missing = get_input(text)
-        obj = get_itemv2(stack, missing)
-        if not obj:
-            store_itemv2(stack, missing)
-            print(f"{missing} not in stack. please try again")
+        query = get_input(text)
+        request = get_itemv2(stack, query)
+        if not request:
+            store_item(stack, query)
+            print(f"{query} not in stack. please try again")
             count +=1
             end = time()
-            total_time = end-start
+            # total_time = end-start
+            # print(f"{query} found, took {count+1} retries and {round(total_time, 3)}mls")
         else:
-            print(f"{obj} found, took {count+1} retries and {round(total_time, 3)}mls")
+            print(f"{query} found, took {count+1} retries")
             found = True
 
 

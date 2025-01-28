@@ -1,4 +1,4 @@
-def get_item(stack:list, item:str) -> str:
+def get_item(stack:list, query:str) -> str:
     """ 
         Method: 'get_item()' Checks for a str in a list and returns a str
         Arguments: requires two positional arguments 'stack' and 'list'
@@ -8,10 +8,11 @@ def get_item(stack:list, item:str) -> str:
         Description: iterates through the stack matching each object to the 'item'
         Returns:   'item' if 'item' object is found within this list it returns 'item' as a str ''
         """
-    if item in stack:
-        return item
+    if query in stack:
+        return query
 
-def get_itemv2(stack:list, item:str) -> str:
+
+def get_itemv2(stack:list, query:str) -> str:
     """
         Method: 'get_itemv2()' checks for a str in a list and returns a str
         Arguments: requires two positional arguments 'stack' and 'list'
@@ -24,7 +25,7 @@ def get_itemv2(stack:list, item:str) -> str:
         """
     for object in stack:
         for i in object:
-            if item == i:
-                return item
+            if query== i:
+                return query
 
     
