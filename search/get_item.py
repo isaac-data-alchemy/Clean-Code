@@ -23,9 +23,7 @@ def get_itemv2(stack:list, query:str) -> str:
             running a '==' check for the 'query' within each 'stack'
         Returns:  if 'query' is found within this list it returns the query as a str
         """
-    for object in stack:
-        for q in object:
+    for _ in stack:
+        for q in _:
             if query== q:
                 return query
-
-    

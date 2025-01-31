@@ -1,5 +1,4 @@
 from time import time
-from urllib import request
 from get_input import get_input
 from get_item import get_item
 from get_item import get_itemv2
@@ -8,10 +7,12 @@ from store import store_item, store_itemv2
 def search_v1(stack: list, text: str) -> str:
     """
     Method: 'search_v1()' searches a list and returns a string 
-    Arguments: requires one positional argument 'stack' 
+    Arguments: requires two positional arguments 'stack' and 'text'
     Dependencies: 'get_input()', 'get_item()'
     Parameters:
-    Stack: a list object to be searched
+    Stack: a list [] object to be searched
+    Text: a global param 'str' prompting the user to enter a query
+globaly
     """
     count = 0
     found = False
@@ -29,10 +30,12 @@ def search_v1(stack: list, text: str) -> str:
 def search_v4(stack: list, text: str) -> str:
     """
     Method: 'search_v1()' searches a list and returns a string 
-    Arguments: requires one positional argument 'stack' 
+    Arguments: requires two positional arguments 'stack' and 'text'
     Dependencies: 'get_input()', 'get_item()'
     Parameters:
-    Stack: a list object to be searched
+    Stack: a list [] object to be searched
+    Text: a global param 'str' prompting the user to enter a query
+
     """
     count = 0
     found = False
@@ -41,7 +44,7 @@ def search_v4(stack: list, text: str) -> str:
         request_obj = get_item(stack, query)
         if not request_obj:
             store_item(stack, query)
-            print(f"{query} not in stack. please try again")
+            print(f"{query} not in stack \n{query} has been added to stack. please try again")
             count +=1
         else:
             print(f"{request_obj} found, took {count+1} tries")
@@ -52,9 +55,10 @@ def search_v2(stack: list, text: str) -> str:
     """
     Method: 'search_v2()'searches a list and returns a string \
     Dependencies: 'get_input()', 'get_itemv2()'
-    Arguments: requires one positional argument 'stack' \
+    Arguments: requires two ositional arguments 'stack' \ and 'text' 
     Parameters:\
-    Stack: a list object to be searched
+    Stack: a list [] object to be searched
+    Text: a global param 'str' prompting the user to enter a query
     """
     start = time()
     count = 0
@@ -77,9 +81,10 @@ def search_v3(stack: list, text: str) -> str:
     """
     Method: 'search_v2()'searches a list and returns a string \
     Dependencies: 'get_input()', 'get_itemv2()'
-    Arguments: requires one positional argument 'stack' \
+    Arguments: requires two positional arguments 'stack' \ and 'text'
     Parameters:\
-    Stack: a list object to be searched
+    Stack: a list [] object to be searched
+    Text: a global param 'str' prompting the user to enter a query
     """
     start = time()
     count = 0
