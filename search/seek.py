@@ -10,9 +10,10 @@ def search_v1(stack: list, text: str) -> str:
     Arguments: requires two positional arguments 'stack' and 'text'
     Dependencies: 'get_input()', 'get_item()'
     Parameters:
-    Stack: a list [] object to be searched
-    Text: a global param 'str' prompting the user to enter a query
+    Stack: represents a list [] object to be searched
+    Text: represents a global param 'str' prompting the user to enter a query
 globaly
+    Returns: query 'str'
     """
     count = 0
     found = False
@@ -33,9 +34,9 @@ def search_v4(stack: list, text: str) -> str:
     Arguments: requires two positional arguments 'stack' and 'text'
     Dependencies: 'get_input()', 'get_item()'
     Parameters:
-    Stack: a list [] object to be searched
-    Text: a global param 'str' prompting the user to enter a query
-
+    Stack: represents a list [] object to be searched
+    Text: represents  a global param 'str' prompting the user to enter a query
+    Returns: query 'str' if it exists within the stack else it adds it and prompts the user to try again.
     """
     count = 0
     found = False
@@ -49,7 +50,6 @@ def search_v4(stack: list, text: str) -> str:
         else:
             print(f"{request_obj} found, took {count+1} tries")
             found = True
-
 
 def search_v2(stack: list, text: str) -> str:
     """
@@ -76,15 +76,15 @@ def search_v2(stack: list, text: str) -> str:
             print(f"{query} not in stack. please try again")
             count +=1
 
-
 def search_v3(stack: list, text: str) -> str:
     """
     Method: 'search_v2()'searches a list and returns a string \
     Dependencies: 'get_input()', 'get_itemv2()'
     Arguments: requires two positional arguments 'stack' \ and 'text'
     Parameters:\
-    Stack: a list [] object to be searched
-    Text: a global param 'str' prompting the user to enter a query
+    Stack: represents a list [] object to be searched
+    Text: represents a global param 'str' prompting the user to enter a query
+    Returns: query
     """
     start = time()
     count = 0
