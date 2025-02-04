@@ -1,5 +1,4 @@
-from collections import List 
-def get_item(stack:List[str], query:str) -> str:
+def get_item(stack:list, query:str) -> str:
     """ 
         Method: 'get_item()' Checks for a str in a list and returns a str
         Arguments: requires two positional arguments 'stack' and 'list'
@@ -13,7 +12,7 @@ def get_item(stack:List[str], query:str) -> str:
         return query
 
 
-def get_itemv2(stack:List[str], query:str) -> str:
+def get_itemv2(stack:list, query:str) -> str:
     """
         Method: 'get_itemv2()' checks for a str in a list and returns a str
         Arguments: requires two positional arguments 'stack' and 'query'
