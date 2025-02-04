@@ -5,6 +5,7 @@ import sys
 # instance
 logger = logging.getLogger("filter_logger")
 
+RANGE = 100
 class NoParsingFilter(logging.Filter):
     def filter(self, record):
         return not record.getMessage().startswith("parsing")
@@ -15,7 +16,7 @@ class FindFilter(logging.Filter):
     def filter(self, record):
         return not record.getMessage().find("parsing")
 
-RANGE = 100
+
 
 def function_a(range=RANGE):
     while range > 0:
