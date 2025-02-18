@@ -103,8 +103,6 @@ def search_v3(stack: list, text: str) -> str:
             print(f"{query} not in stack. please try again")
             count +=1
             end = time()
-            # total_time = end-start
-            # print(f"{query} found, took {count+1} retries and {round(total_time, 3)}mls")
         else:
             print(f"{query} found, took {count+1} retries")
             found = True
