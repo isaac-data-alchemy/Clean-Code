@@ -1,2 +1,4 @@
-.vscode/
 search/__pycache__/
+*.log
+.vscode/
+

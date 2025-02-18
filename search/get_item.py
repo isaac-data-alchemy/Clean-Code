@@ -25,5 +25,5 @@ def get_itemv2(stack:list, query:str) -> str:
         """
     for _ in stack:
         for q in _:
-            if query== q:
+            if query==q:
                 return query
