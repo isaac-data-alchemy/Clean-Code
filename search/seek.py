@@ -2,7 +2,7 @@ from time import time
 from get_input import get_input
 from get_item import get_item
 from get_item import get_itemv2
-from store import store_item, store_itemv2
+from store import store_item as store, store_itemv2
 
 def search_v1(stack: list, text: str) -> str:
     """
@@ -30,12 +30,18 @@ globaly
 
 def search_v4(stack: list, text: str) -> str:
     """
-    Method: 'search_v1()' searches a list and returns a string 
+    Method: 'search_v4()' searches a list and returns a string match if one exists and appends the query to the stack if it does not.
+
     Arguments: requires two positional arguments 'stack' and 'text'
-    Dependencies: 'get_input()', 'get_item()'
+
+    Dependencies: 'get_input()', 'get_item()', 'store_item()'
+
     Parameters:
+
     Stack: represents a list [] object to be searched
+
     Text: represents  a global param 'str' prompting the user to enter a query
+
     Returns: query 'str' if it exists within the stack else it adds it and prompts the user to try again.
     """
     count = 0
@@ -44,7 +50,7 @@ def search_v4(stack: list, text: str) -> str:
         query = get_input(text)
         request_obj = get_item(stack, query)
         if not request_obj:
-            store_item(stack, query)
+            store(stack, query)
             print(f"{query} not in stack \n{query} has been added to stack. please try again")
             count +=1
         else:
